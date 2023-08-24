@@ -14,10 +14,37 @@ function macheEtwas () {
 }
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     macheEtwas()
+    aGedrueckt = 1
+    basic.pause(2000)
 })
+function sendeNachricht () {
+    aGedrueckt = 0
+    for (let index = 0; index < 2; index++) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . # . .
+            . . . . .
+            . . . . .
+            `)
+        basic.showIcon(IconNames.SmallSquare)
+        basic.showIcon(IconNames.Square)
+    }
+    while (aGedrueckt == 0) {
+        basic.showIcon(IconNames.ArrowSouthWest)
+        basic.pause(1000)
+        basic.showLeds(`
+            . . # . .
+            . # . # .
+            # # # # #
+            # . . . #
+            # . . . #
+            `)
+        basic.pause(1000)
+    }
+}
+let aGedrueckt = 0
 let BinärzahlZahl = 0
 let Binärzahl = ""
 Binärzahl = "10011"
-basic.forever(function () {
-	
-})
+sendeNachricht()
