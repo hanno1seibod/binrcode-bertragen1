@@ -7,21 +7,55 @@ function macheEtwas () {
             } else {
                 basic.setLedColor(0x000000)
                 music.playTone(523, music.beat(BeatFraction.Sixteenth))
+                basic.showLeds(`
+                    # . . . .
+                    . . . . .
+                    . . . . .
+                    . . . . .
+                    . . . . .
+                    `)
+                basic.showLeds(`
+                    . . . . .
+                    . . . . .
+                    . . . . .
+                    . . . . .
+                    . . . . .
+                    `)
                 basic.pause(1500)
             }
         }
         if (parseFloat(Binärzahl.substr(Index, 1)) == 1) {
             basic.setLedColor(0xffffff)
             music.playTone(523, music.beat(BeatFraction.Sixteenth))
+            basic.showLeds(`
+                # . . . .
+                . . . . .
+                . . . . .
+                . . . . .
+                . . . . .
+                `)
+            basic.showLeds(`
+                . . . . .
+                . . . . .
+                . . . . .
+                . . . . .
+                . . . . .
+                `)
             basic.pause(1500)
         }
     }
-    basic.pause(5000)
     basic.setLedColor(0x000000)
+    control.reset()
 }
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     aGedrueckt = 1
     basic.pause(2000)
+    basic.showNumber(3)
+    basic.pause(1500)
+    basic.showNumber(2)
+    basic.pause(1500)
+    basic.showNumber(1)
+    basic.pause(1500)
     basic.showLeds(`
         . . . . .
         . . . . .
@@ -45,7 +79,7 @@ function sendeNachricht () {
         basic.showIcon(IconNames.Square)
     }
     while (aGedrueckt == 0) {
-        basic.showIcon(IconNames.ArrowSouthWest)
+        basic.showIcon(IconNames.ArrowWest)
         basic.pause(1000)
         basic.showLeds(`
             . . # . .
@@ -60,7 +94,7 @@ function sendeNachricht () {
 let aGedrueckt = 0
 let BinärzahlZahl = 0
 let Binärzahl = ""
-Binärzahl = "101p1 01@"
+Binärzahl = "00101"
 sendeNachricht()
 basic.forever(function () {
     if (input.buttonIsPressed(Button.A)) {
