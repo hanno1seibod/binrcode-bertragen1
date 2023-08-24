@@ -44,13 +44,6 @@ function macheEtwas () {
         }
     }
     basic.setLedColor(0x000000)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . # . .
-        . . . . .
-        . . . . .
-        `)
     control.reset()
 }
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
@@ -98,7 +91,7 @@ function sendeNachricht () {
 }
 let aGedrueckt = 0
 let Binärzahl = ""
-Binärzahl = "0010100"
+Binärzahl = "0"
 sendeNachricht()
 basic.forever(function () {
     if (input.buttonIsPressed(Button.A)) {
