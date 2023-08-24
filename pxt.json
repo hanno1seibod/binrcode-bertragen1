@@ -1,0 +1,27 @@
+{
+    "name": "Binärcode übertragen",
+    "description": "",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "branch": "v4.0.35",
+        "tag": "v4.0.35",
+        "commits": "https://github.com/microsoft/pxt-calliope/commits/59f1d3e386b9a8c9315a1589d08230335298565d",
+        "target": "4.0.35",
+        "pxt": "7.0.23",
+        "targetId": "calliopemini"
+    },
+    "supportedTargets": [
+        "calliopemini"
+    ],
+    "preferredEditor": "blocksprj"
+}
