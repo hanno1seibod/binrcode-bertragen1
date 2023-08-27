@@ -1,7 +1,7 @@
 function macheEtwas () {
-    for (let Index = 0; Index <= Binärzahl.length - 1; Index++) {
-        if (parseFloat(Binärzahl.substr(Index, 1)) == 0) {
-            if (Binärzahl.substr(Index, 1).includes(" ")) {
+    for (let Index = 0; Index <= euerCode.length - 1; Index++) {
+        if (parseFloat(euerCode.substr(Index, 1)) == 0) {
+            if (euerCode.substr(Index, 1).includes(" ")) {
             	
             } else {
                 basic.setLedColor(0x000000)
@@ -23,7 +23,7 @@ function macheEtwas () {
                 basic.pause(1500)
             }
         }
-        if (parseFloat(Binärzahl.substr(Index, 1)) == 1) {
+        if (parseFloat(euerCode.substr(Index, 1)) == 1) {
             basic.setLedColor(0xffffff)
             music.playTone(523, music.beat(BeatFraction.Sixteenth))
             basic.showLeds(`
@@ -90,8 +90,8 @@ function sendeNachricht () {
     }
 }
 let aGedrueckt = 0
-let Binärzahl = ""
-Binärzahl = "0"
+let euerCode = ""
+euerCode = "0"
 sendeNachricht()
 basic.forever(function () {
     if (input.buttonIsPressed(Button.A)) {
