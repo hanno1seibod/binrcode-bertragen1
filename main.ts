@@ -20,7 +20,7 @@ function macheEtwas () {
                     . . . . .
                     . . . . .
                     `)
-                basic.pause(1500)
+                basic.pause(750)
             }
         }
         if (parseFloat(euerCode.substr(Index, 1)) == 1) {
@@ -40,7 +40,7 @@ function macheEtwas () {
                 . . . . .
                 . . . . .
                 `)
-            basic.pause(1500)
+            basic.pause(750)
         }
     }
     basic.setLedColor(0x000000)
@@ -91,7 +91,7 @@ function sendeNachricht () {
 }
 let aGedrueckt = 0
 let euerCode = ""
-euerCode = "0"
+euerCode = "11001"
 sendeNachricht()
 basic.forever(function () {
     if (input.buttonIsPressed(Button.A)) {
